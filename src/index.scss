@@ -1,155 +1,568 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 1.1rem !important;
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace !important;
-  font-size: 1rem !important;
+html {
+  margin: 0;
+  padding: 0;
+
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px;
+
+  background-color: #0d1116;
 }
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 1.1rem;
+
+  background-color: #0d1116;
+  color: #ffffff;
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: #0d1116;
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+/* =========================================================
+   CODE
+   ========================================================= */
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Courier New",
+    monospace;
+
+  font-size: 1rem;
+}
+
+/* =========================================================
+   MAIN APPLICATION WRAPPER
+   ========================================================= */
 
 .main-container {
   position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
   background-color: #0d1116;
 
+  color: #ffffff;
+
+  overflow-x: hidden;
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
 }
 
+/* =========================================================
+   GLOBAL LINKS
+   ========================================================= */
+
 a {
+  color: inherit;
+
   text-decoration: none;
+
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    opacity 0.15s ease-in-out;
 }
 
 a:hover {
   color: #5000ca;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
 
-p, a, h1, h2, h3, h4, h5, label, button {
-  color: white;
+/* =========================================================
+   GLOBAL TYPOGRAPHY
+   ========================================================= */
+
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+button {
   font-family: "Lato", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+/* =========================================================
+   BUTTON BASE
+   ========================================================= */
+
+button {
+  font-family: "Lato", sans-serif;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
 .navigation-bar {
   justify-content: space-between;
+
   background-color: #0d1116;
+
+  color: #ffffff;
+
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
 
   button {
     font-size: 1.1rem;
+
     font-family: "Lato", sans-serif;
+
     text-transform: initial;
+
     padding: 6px 10px;
   }
 
   svg {
     cursor: pointer;
+
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease,
+      color 0.2s ease;
+  }
+
+  svg:hover {
+    opacity: 0.75;
   }
 }
 
+/* =========================================================
+   RESPONSIVE NAVIGATION
+   ========================================================= */
+
 .navigation-bar-responsive {
-  span, p {
+  span,
+  p {
     color: #0d1116;
+
     font-family: "Lato", sans-serif;
   }
 }
 
+/* =========================================================
+   GLOBAL CONTAINER
+   ========================================================= */
+
 .container {
-  margin-top: 64px;
+  margin-top: 0px;
+
   width: 100%;
+
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
+
+  position: relative;
 }
+
+/* =========================================================
+   HEADER IMAGE
+   ========================================================= */
 
 .header-image {
   width: 100%;
   height: 450px;
 
+  overflow: hidden;
+
   img {
+    display: block;
+
     width: 100%;
     height: 450px;
+
     object-fit: cover;
   }
 }
 
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
 .mobile-menu-top {
   display: flex;
+
   justify-content: center;
   align-items: center;
+
   gap: 5px;
+
   font-weight: bold;
 }
 
+/* =========================================================
+   GENERAL CONTENT
+   ========================================================= */
+
 .items-container {
+  width: 100%;
+
   padding: 5% 10%;
+
   text-align: left;
+
   display: flex;
   flex-direction: column;
+
   justify-content: center;
+
+  box-sizing: border-box;
 }
+
+/* =========================================================
+   DARK GLOBAL THEME
+   ========================================================= */
+
+.dark-mode {
+  background-color: #0d1116;
+
+  color: #ffffff;
+}
+
+.dark-mode #root,
+.dark-mode .main-container {
+  background-color: #0d1116;
+
+  color: #ffffff;
+}
+
+.dark-mode .navigation-bar {
+  background-color: #0d1116;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   LIGHT GLOBAL THEME
+   ========================================================= */
 
 .light-mode {
   background-color: #f8f9fa;
 
-  .navigation-bar {
-    background-color: #f8f9fa;
-  }
-
-  p, a, h1, h2, h3, h4, h5, label, button {
-    color: #0d1116;
-  }
-
-  a:hover {
-    color: #5000ca;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-  }
-
-  .navigation-bar svg {
-    color: #0d1116;
-  }
-
-  .about-section {
-    background-image: url("./assets/images/bg-light.png");
-  }
-
-  .skills-container svg {
-    color: #0d1116;
-  }
-
-  .chip {
-    background-color: rgba(0, 0, 0, 0.08);
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  }
-
-  .vertical-timeline::before {
-    background-color: rgba(0, 0, 0, 0.08);
-  }
-
-  .vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  }
-
-  .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
-    color: gray;
-  }
-
-  .vertical-timeline-element-content-arrow {
-    border-right: 7px solid rgba(0, 0, 0, 0.08) !important;
-  }
-
-  .flex-chips .chip-title {
-    color: #0d1116;
-  }
+  color: #0d1116;
 }
 
-@media screen {
-  @media (max-width: 768px) {
-    .items-container {
-      padding: 5% 5%;
-    }
+.light-mode #root,
+.light-mode .main-container {
+  background-color: #f8f9fa;
+
+  color: #0d1116;
+}
+
+.light-mode .navigation-bar {
+  background-color: #f8f9fa;
+
+  color: #0d1116;
+}
+
+.light-mode .navigation-bar svg {
+  color: #0d1116;
+}
+
+/* =========================================================
+   LIGHT MODE TEXT
+   ========================================================= */
+
+.light-mode p,
+.light-mode a,
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode h6,
+.light-mode label,
+.light-mode button {
+  color: #0d1116;
+}
+
+/* =========================================================
+   LIGHT MODE LINKS
+   ========================================================= */
+
+.light-mode a:hover {
+  color: #5000ca;
+}
+
+/* =========================================================
+   IMPORTANT
+   =========================================================
+   DO NOT SET .about-section BACKGROUND HERE.
+
+   Main.scss owns:
+   - bg-dark.png
+   - dark overlay
+   - light overlay
+   - grid
+   - glows
+
+   Expertise.scss owns its own section background system.
+   ========================================================= */
+
+/* =========================================================
+   SKILLS / MUI GLOBAL FALLBACKS
+   ========================================================= */
+
+.light-mode .skills-container svg {
+  color: #0d1116;
+}
+
+/* =========================================================
+   CHIP FALLBACK
+   ========================================================= */
+
+.light-mode .chip {
+  background-color: rgba(0, 0, 0, 0.08);
+
+  box-shadow:
+    0px 3px 1px -2px rgba(0, 0, 0, 0.20),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.light-mode .flex-chips .chip-title {
+  color: #0d1116;
+}
+
+/* =========================================================
+   VERTICAL TIMELINE — LIGHT MODE
+   ========================================================= */
+
+.light-mode .vertical-timeline::before {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.light-mode
+  .vertical-timeline--animate
+  .vertical-timeline-element-content.bounce-in {
+  box-shadow:
+    0px 3px 1px -2px rgba(0, 0, 0, 0.20),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.light-mode
+  .vertical-timeline--two-columns
+  .vertical-timeline-element-content
+  .vertical-timeline-element-date {
+  color: gray;
+}
+
+.light-mode
+  .vertical-timeline-element-content-arrow {
+  border-right:
+    7px solid
+    rgba(0, 0, 0, 0.08) !important;
+}
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+img {
+  display: block;
+
+  max-width: 100%;
+}
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline:
+    2px solid
+    currentColor;
+
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(80, 0, 202, 0.18);
+}
+
+/* =========================================================
+   SCROLLBAR — DARK
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1116;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.20);
+
+  border-radius: 10px;
+
+  transition:
+    background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* =========================================================
+   SCROLLBAR — LIGHT
+   ========================================================= */
+
+.light-mode::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+.light-mode::-webkit-scrollbar-thumb {
+  background: rgba(39, 40, 34, 0.20);
+}
+
+.light-mode::-webkit-scrollbar-thumb:hover {
+  background: rgba(39, 40, 34, 0.35);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  html {
+    scroll-padding-top: 58px;
   }
+
+  body {
+    font-size: 1rem;
+  }
+
+  .items-container {
+    padding:
+      5%
+      5%;
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+  .items-container {
+    padding:
+      6%
+      4%;
+  }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
 }

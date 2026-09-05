@@ -1,15 +1,419 @@
-footer {
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
+.footer {
+    width: 100%;
+    padding: 90px 0 30px;
+    color: inherit;
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
 
-    svg {
-        width: 1.1em !important;
-        height: 1.1em !important;
-        margin-right: 10px;
+.footer-container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.footer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-identity {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-logo {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid currentColor;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+
+    flex-shrink: 0;
+}
+
+.footer-identity-content h3 {
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.footer-identity-content p {
+    margin: 4px 0 0;
+
+    opacity: 0.55;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   AVAILABILITY
+========================================= */
+
+.footer-availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 9px 15px;
+
+    border: 1px solid currentColor;
+    border-radius: 999px;
+
+    opacity: 0.65;
+
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.availability-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #35d07f;
+
+    box-shadow:
+        0 0 0 4px rgba(53, 208, 127, 0.08),
+        0 0 12px rgba(53, 208, 127, 0.5);
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 45px 0;
+
+    background: currentColor;
+
+    opacity: 0.12;
+
+    transition: opacity 0.3s ease;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.footer-content {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(130px, 1fr)
+        minmax(130px, 1fr);
+
+    gap: 70px;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.footer-message {
+    max-width: 600px;
+}
+
+.footer-eyebrow {
+    display: block;
+
+    margin-bottom: 18px;
+
+    opacity: 0.5;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.footer-message h2 {
+    margin: 0;
+
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 700;
+
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.footer-message h2 span {
+    opacity: 0.45;
+}
+
+.footer-message p {
+    max-width: 520px;
+
+    margin: 22px 0 0;
+
+    opacity: 0.55;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.footer-navigation,
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-navigation h4,
+.footer-social h4 {
+    margin: 0 0 20px;
+
+    opacity: 0.45;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.footer-navigation button {
+    padding: 5px 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: inherit;
+
+    opacity: 0.65;
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.footer-navigation button:hover {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   SOCIAL
+========================================= */
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 12px;
+    padding: 5px 0;
+
+    color: inherit;
+
+    opacity: 0.65;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.footer-social a:hover {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.footer-social svg {
+    font-size: 19px;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-copyright {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    opacity: 0.45;
+
+    font-size: 12px;
+}
+
+.footer-separator {
+    opacity: 0.5;
+}
+
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+.back-to-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    border: 1px solid currentColor;
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: inherit;
+
+    opacity: 0.65;
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 12px;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.back-to-top svg {
+    font-size: 17px;
+}
+
+
+/* =========================================
+   FOCUS ACCESSIBILITY
+========================================= */
+
+.footer button:focus-visible,
+.footer a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media screen and (max-width: 850px) {
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
     }
 
-    p {
-        font-size: 0.8em;
+    .footer-message {
+        grid-column: 1 / -1;
+        max-width: 650px;
     }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media screen and (max-width: 600px) {
+
+    .footer {
+        padding: 65px 0 25px;
+    }
+
+    .footer-container {
+        width: 90%;
+    }
+
+    .footer-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-availability {
+        font-size: 12px;
+    }
+
+    .footer-divider {
+        margin: 35px 0;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+
+        gap: 40px;
+    }
+
+    .footer-message h2 {
+        font-size: 34px;
+        letter-spacing: -1.5px;
+    }
+
+    .footer-message p {
+        font-size: 14px;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .back-to-top {
+        width: 100%;
+        justify-content: center;
+    }
+
 }

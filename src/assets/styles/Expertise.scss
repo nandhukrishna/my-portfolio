@@ -1,85 +1,1100 @@
-.skills-container {
-    padding: 5% 10%;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+/* =========================================================
+   EXPERTISE — PREMIUM 3D / GLASS UI
+   ========================================================= */
 
-    svg {
-        color: white;
-    }
-}
-  
-.skills-container .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 50px;
-}
-  
-.skills-container .skills-grid .skill {
-    align-items: center;
-    text-align: left;
-}
-  
-.chip {
-    color: rgb(39, 40, 34) !important;
-    background-color: white !important;
-    font-size: 0.8rem !important;
-    height: 25px !important;
-  
-    span {
-        font-family: 'Courier Prime', monospace;
-        color: rgb(39, 40, 34);
-    }
-  
-    svg {
-        height: 15px !important;
-    }
-}
+#expertise {
+  --text: #272822;
+  --muted: rgba(39, 40, 34, 0.68);
+  --subtle: rgba(39, 40, 34, 0.45);
+  --border: rgba(39, 40, 34, 0.14);
+  --soft-border: rgba(39, 40, 34, 0.08);
 
-.flex-chips {
-    line-height: 2;
-    margin: 0.5;
+  --card-bg: rgba(255, 255, 255, 0.44);
+  --card-bg-hover: rgba(255, 255, 255, 0.58);
 
-    .chip-title {
-        color: white;
-        padding-right: 10px;
-    }
+  --chip-bg: rgba(39, 40, 34, 0.045);
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 115px 7vw 125px;
+
+  box-sizing: border-box;
+
+  color: var(--text);
+
+  /*
+   * DARK IS THE DEFAULT BACKGROUND
+   */
+  background-image: url("../images/bg-dark.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.flex-chips .MuiChip-root {
-    margin-right: 0.5em;
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+.dark-mode #expertise {
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.72);
+  --subtle: rgba(255, 255, 255, 0.46);
+  --border: rgba(255, 255, 255, 0.14);
+  --soft-border: rgba(255, 255, 255, 0.08);
+
+  --card-bg: rgba(255, 255, 255, 0.045);
+  --card-bg-hover: rgba(255, 255, 255, 0.075);
+
+  --chip-bg: rgba(255, 255, 255, 0.055);
+
+  background-image: url("../images/bg-dark.png");
 }
 
-.flex-chips .MuiChip-outlined {
-    background-color: #e0e0e0;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+/* =========================================================
+   LIGHT MODE
+   IMPORTANT:
+   LIGHT MODE USES bg-light.png
+   ========================================================= */
+
+.light-mode #expertise {
+  --text: #272822;
+  --muted: rgba(39, 40, 34, 0.68);
+  --subtle: rgba(39, 40, 34, 0.45);
+  --border: rgba(39, 40, 34, 0.14);
+  --soft-border: rgba(39, 40, 34, 0.08);
+
+  --card-bg: rgba(255, 255, 255, 0.50);
+  --card-bg-hover: rgba(255, 255, 255, 0.66);
+
+  --chip-bg: rgba(39, 40, 34, 0.045);
+
+  background-image: url("../images/bg-light.png");
 }
 
-.flex-chips .MuiChip-outlined span {
-    color: rgb(39, 40, 34);
+/* =========================================================
+   BACKGROUND LIGHTING
+   ========================================================= */
+
+#expertise::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -3;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 72% 22%,
+      rgba(255, 255, 255, 0.12),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 20% 75%,
+      rgba(255, 255, 255, 0.06),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.18),
+      rgba(0, 0, 0, 0.42)
+    );
 }
 
-@media screen {
-    @media (max-width: 768px) {
-        .skills-container {
-            display: block;
-            padding-left: 5%;
-            padding-right: 5%;
-        }
-    
-        .skills-container .skills-grid {
-            display: initial;
-        }
-        
-        .skills-container .skills-grid .skill {
-            padding-bottom: 5%;
-        }
-    }
+.light-mode #expertise::before {
+  background:
+    radial-gradient(
+      circle at 74% 18%,
+      rgba(255, 255, 255, 0.96),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 15% 78%,
+      rgba(255, 255, 255, 0.78),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.78),
+      rgba(255, 255, 255, 0.54)
+    );
+}
 
-    @media (max-width: 567px) {
-        .skills {
-            font-size: 12px;
-        }
-    }
+/* =========================================================
+   GRID
+   ========================================================= */
+
+#expertise::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -2;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  opacity: 0.42;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+}
+
+.light-mode #expertise::after {
+  background-image:
+    linear-gradient(
+      rgba(39, 40, 34, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(39, 40, 34, 0.045) 1px,
+      transparent 1px
+    );
+
+  opacity: 0.20;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+#expertise .skills-container {
+  position: relative;
+  z-index: 5;
+
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   SECTION LABEL
+   ========================================================= */
+
+#expertise .skills-container::before {
+  content: "02 / EXPERTISE";
+
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: var(--subtle);
+
+  font-family:
+    "Lato",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+
+  opacity: 0.95;
+}
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+#expertise .skills-container > h1 {
+  position: relative;
+
+  margin: 0 0 62px;
+
+  color: var(--text);
+
+  font-family:
+    "Lato",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+
+  font-weight: 700;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.06em;
+}
+
+/* elegant accent */
+#expertise .skills-container > h1::after {
+  content: "";
+
+  display: block;
+
+  width: 62px;
+  height: 2px;
+
+  margin-top: 24px;
+
+  background: var(--text);
+
+  opacity: 0.55;
+}
+
+/* =========================================================
+   SKILL GRID
+   ========================================================= */
+
+#expertise .skills-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+
+  perspective: 1400px;
+}
+
+/* =========================================================
+   3D SKILL CARD
+   ========================================================= */
+
+#expertise .skill {
+  position: relative;
+
+  min-height: 455px;
+
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--border);
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.10),
+      transparent 38%
+    ),
+    var(--card-bg);
+
+  backdrop-filter: blur(22px) saturate(120%);
+  -webkit-backdrop-filter: blur(22px) saturate(120%);
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.025);
+
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/* 3D depth layer */
+#expertise .skill::before {
+  content: "";
+
+  position: absolute;
+  inset: 8px;
+
+  z-index: -1;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.045);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      transparent 45%
+    );
+
+  transform: translateZ(-18px);
+
+  pointer-events: none;
+}
+
+/* soft 3D light */
+#expertise .skill::after {
+  content: "";
+
+  position: absolute;
+
+  top: -90px;
+  right: -80px;
+
+  width: 230px;
+  height: 230px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.10);
+
+  filter: blur(45px);
+
+  opacity: 0.40;
+
+  pointer-events: none;
+
+  transform: translateZ(-4px);
+}
+
+/* =========================================================
+   DARK CARD
+   ========================================================= */
+
+.dark-mode #expertise .skill {
+  box-shadow:
+    0 30px 75px rgba(0, 0, 0, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.16);
+}
+
+/* =========================================================
+   LIGHT CARD
+   ========================================================= */
+
+.light-mode #expertise .skill {
+  box-shadow:
+    0 28px 60px rgba(39, 40, 34, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -1px 0 rgba(39, 40, 34, 0.025);
+}
+
+/* =========================================================
+   3D HOVER
+   ========================================================= */
+
+#expertise .skill:hover {
+  transform:
+    perspective(1200px)
+    rotateX(2deg)
+    rotateY(-2.5deg)
+    translateY(-9px)
+    translateZ(8px);
+
+  background: var(--card-bg-hover);
+
+  border-color: rgba(255, 255, 255, 0.22);
+
+  box-shadow:
+    0 38px 85px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.light-mode #expertise .skill:hover {
+  border-color: rgba(39, 40, 34, 0.20);
+
+  box-shadow:
+    0 35px 70px rgba(39, 40, 34, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.dark-mode #expertise .skill:hover {
+  box-shadow:
+    0 38px 90px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+#expertise .skill > svg {
+  width: 47px;
+  height: 47px;
+
+  margin-bottom: 30px;
+
+  color: var(--text);
+
+  opacity: 0.92;
+
+  transform:
+    translateZ(24px);
+
+  filter:
+    drop-shadow(0 8px 14px rgba(0, 0, 0, 0.10));
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.3s ease;
+}
+
+#expertise .skill:hover > svg {
+  opacity: 1;
+
+  transform:
+    translateZ(34px)
+    translateY(-3px);
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+#expertise .skill h3 {
+  margin: 0 0 14px;
+
+  color: var(--text);
+
+  font-family:
+    "Lato",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.028em;
+
+  transform: translateZ(20px);
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+#expertise .skill > p {
+  max-width: 650px;
+
+  margin: 0 0 32px;
+
+  color: var(--muted);
+
+  font-family:
+    "Lato",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.97rem;
+
+  line-height: 1.75;
+
+  transform: translateZ(14px);
+}
+
+/* =========================================================
+   CHIP SECTION
+   ========================================================= */
+
+#expertise .flex-chips {
+  position: relative;
+
+  margin-top: auto;
+
+  transform: translateZ(15px);
+}
+
+#expertise .chip-title {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: var(--subtle);
+
+  font-family:
+    "Lato",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.69rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+#expertise .tech-chips {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+/* =========================================================
+   MUI CHIPS
+   ========================================================= */
+
+#expertise .chip {
+  height: 35px !important;
+
+  margin: 0 !important;
+
+  padding: 0 11px !important;
+
+  border: 1px solid var(--soft-border) !important;
+
+  border-radius: 999px !important;
+
+  background: var(--chip-bg) !important;
+
+  color: var(--text) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 4px 14px rgba(0, 0, 0, 0.035) !important;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease !important;
+}
+
+#expertise .chip:hover {
+  transform:
+    translateY(-3px)
+    translateZ(8px);
+
+  border-color: var(--border) !important;
+
+  background: rgba(255, 255, 255, 0.16) !important;
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.07) !important;
+}
+
+.dark-mode #expertise .chip:hover {
+  background: rgba(255, 255, 255, 0.085) !important;
+}
+
+.light-mode #expertise .chip:hover {
+  background: rgba(255, 255, 255, 0.42) !important;
+}
+
+/* =========================================================
+   CHIP CONTENT
+   ========================================================= */
+
+#expertise .chip-content {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  color: var(--text);
+
+  line-height: 1;
+}
+
+#expertise .tech-icon {
+  width: 14px;
+  height: 14px;
+
+  color: var(--text);
+
+  opacity: 0.80;
+}
+
+#expertise .tech-text-icon {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 17px;
+
+  color: var(--text);
+
+  font-size: 0.56rem;
+
+  font-weight: 800;
+
+  letter-spacing: -0.02em;
+
+  opacity: 0.80;
+}
+
+#expertise .tech-label {
+  color: var(--text);
+
+  font-family:
+    "Lato",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.73rem;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   PROFESSIONAL PROJECT HIGHLIGHTS
+   ========================================================= */
+
+#expertise .expertise-highlights {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+
+  margin-top: 24px;
+
+  perspective: 1400px;
+}
+
+/* =========================================================
+   HIGHLIGHT CARD
+   ========================================================= */
+
+#expertise .expertise-highlight {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 23px;
+
+  min-height: 155px;
+
+  padding: 29px 31px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--soft-border);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 50%
+    ),
+    rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.dark-mode #expertise .expertise-highlight {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.05),
+      transparent 50%
+    ),
+    rgba(255, 255, 255, 0.028);
+}
+
+.light-mode #expertise .expertise-highlight {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.40),
+      transparent 50%
+    ),
+    rgba(255, 255, 255, 0.23);
+}
+
+/* highlight depth layer */
+#expertise .expertise-highlight::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  border-radius: 19px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 42%
+    );
+
+  pointer-events: none;
+
+  transform: translateZ(-8px);
+}
+
+/* small light orb */
+#expertise .expertise-highlight::after {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  right: -55px;
+  bottom: -65px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  filter: blur(28px);
+
+  pointer-events: none;
+}
+
+#expertise .expertise-highlight:hover {
+  transform:
+    perspective(1000px)
+    rotateX(1.5deg)
+    rotateY(-1.5deg)
+    translateY(-6px)
+    translateZ(5px);
+
+  border-color: var(--border);
+
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13);
+}
+
+.dark-mode #expertise .expertise-highlight:hover {
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+#expertise .highlight-number {
+  flex-shrink: 0;
+
+  padding-top: 2px;
+
+  color: var(--subtle);
+
+  font-family:
+    "Lato",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.69rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  transform: translateZ(18px);
+}
+
+/* =========================================================
+   HIGHLIGHT CONTENT
+   ========================================================= */
+
+#expertise .highlight-content {
+  position: relative;
+  z-index: 2;
+
+  min-width: 0;
+
+  transform: translateZ(15px);
+}
+
+#expertise .highlight-content h4 {
+  margin: 0 0 8px;
+
+  color: var(--text);
+
+  font-family:
+    "Lato",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  letter-spacing: -0.01em;
+}
+
+#expertise .highlight-content p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-family:
+    "Lato",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.84rem;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+  #expertise {
+    padding: 95px 5vw 105px;
+  }
+
+  #expertise .skills-container > h1 {
+    margin-bottom: 48px;
+  }
+
+  #expertise .skills-grid,
+  #expertise .expertise-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  #expertise .skill {
+    min-height: auto;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  #expertise {
+    min-height: auto;
+
+    padding: 78px 20px 82px;
+
+    background-position: center;
+  }
+
+  #expertise .skills-container::before {
+    margin-bottom: 14px;
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.16em;
+  }
+
+  #expertise .skills-container > h1 {
+    margin-bottom: 40px;
+
+    font-size: clamp(2.8rem, 15vw, 4rem);
+
+    letter-spacing: -0.065em;
+  }
+
+  #expertise .skills-container > h1::after {
+    width: 44px;
+
+    margin-top: 19px;
+  }
+
+  #expertise .skills-grid {
+    gap: 17px;
+  }
+
+  #expertise .skill {
+    min-height: auto;
+
+    padding: 27px 22px;
+
+    border-radius: 18px;
+
+    transform: none !important;
+  }
+
+  #expertise .skill:hover {
+    transform: translateY(-4px) !important;
+  }
+
+  #expertise .skill > svg {
+    width: 41px;
+    height: 41px;
+
+    margin-bottom: 22px;
+
+    transform: none;
+  }
+
+  #expertise .skill:hover > svg {
+    transform: translateY(-2px);
+  }
+
+  #expertise .skill h3 {
+    font-size: 1.28rem;
+  }
+
+  #expertise .skill > p {
+    margin-bottom: 25px;
+
+    font-size: 0.89rem;
+
+    line-height: 1.7;
+  }
+
+  #expertise .tech-chips {
+    gap: 7px;
+  }
+
+  #expertise .chip {
+    height: 32px !important;
+
+    padding: 0 9px !important;
+  }
+
+  #expertise .tech-icon {
+    width: 13px;
+    height: 13px;
+  }
+
+  #expertise .tech-label {
+    font-size: 0.68rem;
+  }
+
+  #expertise .expertise-highlights {
+    gap: 13px;
+
+    margin-top: 17px;
+  }
+
+  #expertise .expertise-highlight {
+    gap: 17px;
+
+    min-height: auto;
+
+    padding: 22px 19px;
+
+    border-radius: 15px;
+
+    transform: none !important;
+  }
+
+  #expertise .expertise-highlight:hover {
+    transform: translateY(-3px) !important;
+  }
+
+  #expertise .highlight-content h4 {
+    font-size: 0.92rem;
+  }
+
+  #expertise .highlight-content p {
+    font-size: 0.78rem;
+
+    line-height: 1.6;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  #expertise {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  #expertise .skill {
+    padding: 23px 18px;
+  }
+
+  #expertise .expertise-highlight {
+    padding: 19px 16px;
+  }
+
+  #expertise .highlight-number {
+    font-size: 0.61rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  #expertise .skill,
+  #expertise .skill > svg,
+  #expertise .chip,
+  #expertise .expertise-highlight {
+    transition: none !important;
+  }
+
+  #expertise .skill:hover,
+  #expertise .skill:hover > svg,
+  #expertise .chip:hover,
+  #expertise .expertise-highlight:hover {
+    transform: none !important;
+  }
 }
