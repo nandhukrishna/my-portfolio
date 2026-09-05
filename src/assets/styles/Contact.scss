@@ -1,48 +1,495 @@
+#contact {
+  width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+  background: transparent;
+
+  .items-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .contact_wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    /* Card animation */
+    animation: contactFadeUp 0.8s ease-out both;
+
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+
+      animation: titleFade 0.8s ease-out 0.1s both;
+    }
+
+    > p {
+      margin: 0 0 28px;
+
+      color: rgba(255, 255, 255, 0.65);
+
+      font-size: 0.95rem;
+      line-height: 1.6;
+
+      animation: titleFade 0.8s ease-out 0.2s both;
+    }
+  }
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.contact-form {
+  width: 100%;
+
+  > .MuiTextField-root {
+    width: 100%;
+    margin-bottom: 18px;
+
+    /* Input entrance animation */
+    animation: fieldFade 0.6s ease-out both;
+
+    &:nth-child(1) {
+      animation-delay: 0.25s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 0.35s;
+    }
+  }
+
+
+  /* INPUT */
+
+  .MuiOutlinedInput-root {
+    border-radius: 10px;
+
+    color: #fff;
+    background: rgba(255, 255, 255, 0.03);
+
+    transition:
+      background 0.25s ease,
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+
+    fieldset {
+      border-color: rgba(255, 255, 255, 0.16);
+
+      transition: border-color 0.25s ease;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+
+      fieldset {
+        border-color: rgba(255, 255, 255, 0.35);
+      }
+    }
+
+    &.Mui-focused {
+      background: rgba(255, 255, 255, 0.05);
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 0 0 3px rgba(124, 53, 233, 0.08);
+
+      fieldset {
+        border-color: #7c35e9;
+      }
+    }
+
+    &.Mui-error {
+      fieldset {
+        border-color: #ff6673;
+      }
+    }
+  }
+
+
+  /* TEXT */
+
+  .MuiInputBase-input {
+    color: #fff;
+    font-size: 0.95rem;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+      opacity: 1;
+
+      transition: opacity 0.2s ease;
+    }
+
+    &:focus::placeholder {
+      opacity: 0.2;
+    }
+  }
+
+
+  /* LABEL */
+
+  .MuiInputLabel-root {
+    color: rgba(255, 255, 255, 0.6);
+
+    transition: color 0.25s ease;
+
+    &.Mui-focused {
+      color: #a879ff;
+    }
+
+    &.Mui-error {
+      color: #ff6673;
+    }
+  }
+
+
+  /* MESSAGE */
+
+  .body-form {
+    .MuiOutlinedInput-root {
+      align-items: flex-start;
+    }
+
+    textarea {
+      line-height: 1.6;
+      resize: none;
+      box-sizing: border-box;
+    }
+  }
+
+
+  /* ERROR */
+
+  .MuiFormHelperText-root {
+    margin-left: 2px;
+    margin-top: 5px;
+
+    font-size: 0.75rem;
+
+    animation: errorFade 0.2s ease-out;
+  }
+
+
+  /* =========================================
+     WHATSAPP BUTTON
+  ========================================= */
+
+  .MuiButton-root {
+    float: right;
+
+    min-height: 46px;
+    padding: 9px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #25d366;
+    color: #fff;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-transform: none;
+
+    box-shadow: 0 5px 18px rgba(37, 211, 102, 0.12);
+
+    animation: buttonFade 0.7s ease-out 0.45s both;
+
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease;
+
+    .MuiButton-startIcon {
+      transition: transform 0.25s ease;
+    }
+
+    &:hover {
+      background: #1ebe5d;
+
+      transform: translateY(-2px);
+
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.25);
+
+      .MuiButton-startIcon {
+        transform: scale(1.1);
+      }
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
 .contact_wrapper svg {
   font-size: 1em;
   vertical-align: middle;
-  margin-right: 5px;
 }
 
-.contact-form {
-  padding-top: 20px;
 
-  button {
-    float: right;
-    background-color: white;
-    color: #050f0b;
-  }
-
-  button:hover {
-    background-color: #5000ca;
-    color: white;
-  }
-
-  fieldset {
-    background-color: white;
-  }
-}
+/* =========================================
+   LABEL
+========================================= */
 
 label {
-  font-size: 1.2rem;
-  font-family: 'DomaineDispNar-Medium', sans-serif;
+  font-size: 1rem;
+  font-family: "DomaineDispNar-Medium", sans-serif;
 }
 
-.form-flex {
-  display: flex;
-  gap: 15px;
-  padding-bottom: 15px;
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes contactFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.form-flex .MuiFormControl-root {
-  width: 100%;
+
+@keyframes titleFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-form {
-  width: 100% !important;
+
+@keyframes fieldFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.body-form {
-  width: 100% !important;
-  margin-bottom: 15px !important;
+
+@keyframes buttonFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes errorFade {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   LIGHT MODE
+========================================= */
+
+@media (prefers-color-scheme: light) {
+
+  #contact {
+
+    .contact_wrapper {
+      background: #fff;
+
+      border-color: rgba(0, 0, 0, 0.1);
+
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+
+      &:hover {
+        border-color: rgba(0, 0, 0, 0.15);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        color: #111;
+      }
+
+      > p {
+        color: rgba(20, 20, 20, 0.65);
+      }
+    }
+  }
+
+
+  .contact-form {
+
+    .MuiOutlinedInput-root {
+      color: #111;
+      background: #fff;
+
+      fieldset {
+        border-color: rgba(0, 0, 0, 0.16);
+      }
+
+      &:hover {
+        background: #fff;
+
+        fieldset {
+          border-color: rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      &.Mui-focused {
+        background: #fff;
+
+        box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.06);
+
+        fieldset {
+          border-color: #6d28d9;
+        }
+      }
+    }
+
+
+    .MuiInputBase-input {
+      color: #111;
+
+      &::placeholder {
+        color: rgba(20, 20, 20, 0.4);
+      }
+    }
+
+
+    .MuiInputLabel-root {
+      color: rgba(20, 20, 20, 0.6);
+
+      &.Mui-focused {
+        color: #6d28d9;
+      }
+    }
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  #contact {
+    padding: 60px 0;
+
+    .contact_wrapper {
+      padding: 30px 22px;
+      border-radius: 14px;
+
+      h1 {
+        font-size: 2.1rem;
+      }
+
+      > p {
+        font-size: 0.92rem;
+      }
+    }
+  }
+
+
+  .contact-form {
+
+    .MuiButton-root {
+      width: 100%;
+      float: none;
+      margin-top: 2px;
+    }
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  #contact {
+    padding: 50px 0;
+
+    .items-container {
+      padding: 0 12px;
+    }
+
+    .contact_wrapper {
+      padding: 25px 16px;
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      > p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #contact,
+  #contact *,
+  .contact-form,
+  .contact-form * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
